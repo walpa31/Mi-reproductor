@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi Reproductor (PWA)</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#111111"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🎵 Mi Biblioteca</h1>
+    <div class="row">
+      <label class="btn">
+        + Agregar archivos
+        <input id="fileInput" type="file" multiple accept="audio/*,video/*" hidden />
+      </label>
+      <button id="clearBtn" class="btn danger" title="Borra la biblioteca local">Borrar biblioteca</button>
+    </div>
+    <p class="hint">Soporta mp3, mp4, mov, etc. Se guardan localmente en tu dispositivo (IndexedDB).</p>
+  </header>
+
+  <main>
+    <section class="library">
+      <div class="row space">
+        <h2>Biblioteca</h2>
+        <div class="row">
+          <select id="playMode">
+            <option value="normal">Normal</option>
+            <option value="shuffle">Aleatorio</option>
+          </select>
+
+          <select id="repeatMode" title="Repetición">
+            <option value="none">Sin repetir</option>
+            <option value="one">Repetir 1 (loop)</option>
+            <option value="all">Repetir todo</option>
+          </select>
+        </div>
+      </div>
+
+      <ul id="trackList" class="trackList"></ul>
+      <div id="emptyState" class="empty">
+        Sube archivos para empezar.
+      </div>
+    </section>
+
+    <section class="player">
+      <h2>Reproductor</h2>
+
+      <div class="now">
+        <div class="cover">♪</div>
+        <div class="meta">
+          <div id="nowTitle" class="title">Nada reproduciéndose</div>
+          <div id="nowType" class="sub">—</div>
+        </div>
+      </div>
+
+      <!-- audio único: reproducimos audio de mp3 o extraemos audio de mp4/mov reproduciéndolos como audio (en muchos casos funciona) -->
+      <audio id="audio" preload="metadata" controls></audio>
+
+      <div class="controls">
+        <button id="prevBtn" class="btn">⏮️</button>
+        <button id="playPauseBtn" class="btn primary">▶️ / ⏸️</button>
+        <button id="nextBtn" class="btn">⏭️</button>
+      </div>
+
+      <div class="row space">
+        <label class="row gap">
+          <span>Volumen</span>
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="1">
+        </label>
+        <label class="row gap">
+          <span>Velocidad</span>
+          <input id="rate" type="range" min="0.5" max="2" step="0.1" value="1">
+        </label>
+      </div>
+
+      <p class="hint">
+        Tip: Instálalo como app (PWA) desde el menú del navegador para mejorar el “segundo plano”.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <small>Hecho sin servidor. Tus archivos quedan en este dispositivo.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
