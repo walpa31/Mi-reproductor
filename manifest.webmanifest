@@ -1,0 +1,15 @@
+{
+  "name": "Mi Reproductor",
+  "short_name": "Reproductor",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0f12",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAQCAYAAABAfUpKAAAACXBIWXMAAAsSAAALEgHS3X78AAABTUlEQVR4nO2WsUoDQRBFz0QJfQGxSxCwEoVY2KQ2gk8g2kZQ0h1gK8g0gqQKZbQwYcQyJY9lYy3Zl3m8mY2mC6Ckz8r7x3ZzM7yCz6wQm0sB0q1pGfXKZ4W7a4YH4Xy8gZyQYfKj8y5mQb7o1yG8wJc4qvGf0cQ2t4wA7qvQmQ0f4Sg2xqgqQv2bJm4gkzqFfWmG8G2Kz3gBq7YdQp0QJpG3gV3oQZQmYVhKkK0XQm2b2mHcQw9o1mYh1kY2rYhO9q8o5m5gqk0kqW2xXJwq1bY3oYf8p8b4Xzj0cXn2yJk7x0gH1f0EoQh2s6xkYdZqg6GQmZp9wV8H0h0wqO5m3oD3kqkJf7xkQAAAABJRU5ErkJggg==",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
